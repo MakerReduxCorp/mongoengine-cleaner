@@ -1,12 +1,12 @@
 mongoengine-cleaner
 ===================
 
-A heritable class desined for work with `Mongoengine <http://mongoengine.org>`_ documents to streamline validation and correction after reading but before saving.
+A heritable class desined for work with `Mongoengine <http://mongoengine.org>`_ documents. It streamline the validation and correction of the raw MongoDb after reading but before saving.
 
 Full documentation not yet developed.
 
-Declare Your Model Simply
--------------------------
+Declare a Simple Model
+----------------------
 
 .. code-block:: python
 
@@ -19,8 +19,8 @@ Declare Your Model Simply
         author = me.StringField(required=True, correction="unknown")
 
 
-Or Write a Something Fancy
---------------------------
+Or Write Something Fancy
+------------------------
 
 .. code-block:: python
 
@@ -37,10 +37,10 @@ Or Write a Something Fancy
 
     class Post(me.Document, mec.Cleaner):
         title = me.StringField(max_length=120, required=True, correction=mec.Str)
-        tags = me.ListField(me.StringField(), allow_null=False, correction=mec.Skip)
+        tags = me.ListField(me.StringField(), correction=mec.SkipNull)
         author = me.StringField(required=True, correction=author_check)
 
-Invoke the `cleanup` Method
+Invoke the Cleanup Method
 ---------------------------
 
 .. code-block:: python
@@ -57,4 +57,4 @@ Get It Now
 License
 -------
 
-MIT licensed. See the bundled `LICENSE` file for more details.
+MIT licensed. See the bundled LICENSE file for more details.
