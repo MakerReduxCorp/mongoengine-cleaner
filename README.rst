@@ -1,7 +1,7 @@
 mongoengine-cleaner
 ===================
 
-A heritable class desined for work with `Mongoengine <http://mongoengine.org>`_ documents. It streamline the validation and correction of the raw MongoDb after reading but before saving.
+A heritable class designed for work with `mongoengine <http://mongoengine.org>`_ documents. It streamlines the validation and correction of the raw MongoDB data.
 
 Full documentation not yet developed.
 
